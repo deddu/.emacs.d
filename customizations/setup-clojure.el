@@ -2,8 +2,18 @@
 ;; Clojure
 ;;;;
 
+
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 ;; Enable paredit for Clojure
-(add-hook 'clojure-mode-hook 'enable-paredit-mode)
+(add-hook 'clojure-mode-hook #'enable-paredit-mode)
+
+
+(add-hook 'clojure-mode-hook #'yas-minor-mode)
+
+
+(add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
+
+(add-hook 'clojure-mode-hook #'company-mode)
 
 ;; This is useful for working with camel-case tokens, like names of
 ;; Java classes (e.g. JavaClassName)

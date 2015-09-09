@@ -66,7 +66,13 @@
     tagedit
 
     ;; git integration
-    magit))
+    magit
+
+    ;; autocomplete
+    company
+
+    ;;snippets
+    yasnippet))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -129,4 +135,5 @@
 
 ;; Langauage-specific
 (load "setup-clojure.el")
+;;(load "setup-clojurescript.el")
 (load "setup-js.el")
