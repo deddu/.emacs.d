@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org-refile-last-stored"
+ (filename . "~/Dropbox/etc/turing/notes/cemr-todo.org")
+ (front-context-string . "** NEXT exportin")
+ (rear-context-string . "MPASSEMR-1165\n\n\n")
+ (position . 16603))
+)
