@@ -10,6 +10,10 @@
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("gnu" . "http://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 ;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 ;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -137,6 +141,7 @@
 (load "setup-clojure.el")
 ;;(load "setup-clojurescript.el")
 (load "setup-js.el")
+(load "setup-haskell.el")
 
 ;; OrgMode
 (load "setup-org.el")
@@ -146,10 +151,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
- '(org-agenda-files
+ '(custom-safe-themes
    (quote
-    ("~/Dropbox/todo.org" "~/Dropbox/etc/turing/notes/cemr-todo.org")))
- '(org-log-into-drawer t))
+    ("ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default)))
+ '(org-agenda-files (quote ("~/Dropbox/todo.org")))
+ '(org-log-into-drawer t)
+ '(package-selected-packages
+   (quote
+    (hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell company clojurescript-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

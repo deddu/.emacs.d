@@ -1,5 +1,9 @@
 ;; Customizations relating to editing a buffer.
 
+;; word wrap 
+(setq-default word-wrap t)
+(global-visual-line-mode t)
+
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
 (global-set-key (kbd "M-/") 'hippie-expand)

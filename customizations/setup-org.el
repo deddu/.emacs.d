@@ -21,12 +21,8 @@
 
 (setq org-agenda-files
       '("~/Dropbox/todo.org" 
-        "~/Dropbox/etc/turing/notes/todo.org" 
-        "~/Dropbox/etc/turing/notes/cemr-todo.org"
-        "~/Dropbox/etc/turing/notes/metra-todo.org"
-        "~/Dropbox/etc/turing/notes/gbk-todo.org"
-        "~/Dropbox/etc/turing/notes/burnham-todo.org"
-        "~/Dropbox/etc/turing/notes/checkins-todo.org"))
+
+))
 
 (setq org-refile-targets
       '((nil :maxlevel . 3)
