@@ -44,7 +44,7 @@
     clojure-mode
 
     ;; extra syntax highlighting for clojure
-    clojure-mode-extra-font-locking
+    ;; clojure-mode-extra-font-locking
 
     ;; integration with a Clojure REPL
     ;; https://github.com/clojure-emacs/cider
@@ -145,6 +145,7 @@
 
 ;; OrgMode
 (load "setup-org.el")
+(setq org-element-use-cache nil)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -154,7 +155,12 @@
  '(custom-safe-themes
    (quote
     ("ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default)))
- '(org-agenda-files (quote ("~/Dropbox/todo.org")))
+ '(haskell-process-auto-import-loaded-modules t)
+ '(haskell-process-log t)
+ '(haskell-process-suggest-remove-import-lines t)
+ '(haskell-process-type (quote cabal-repl))
+ '(haskell-tags-on-save t)
+ '(org-agenda-files (quote ("~/Dropbox/etc/spd/todo.org" "~/Dropbox/todo.org")))
  '(org-log-into-drawer t)
  '(package-selected-packages
    (quote
