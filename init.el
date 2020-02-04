@@ -111,7 +111,7 @@
 ;;;;
 ;; Customization
 ;;;;
-
+(setq org-element-use-cache nil)
 ;; Add a directory to our load path so that when you `load` things
 ;; below, Emacs knows where to look for the corresponding file.
 (add-to-list 'load-path "~/.emacs.d/customizations")
