@@ -38,3 +38,21 @@
 
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
+
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((js . t)
+   (python . t)
+   ))
+
+(setq org-export-latex-listings 'minted)
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-pdf-process
+      '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f")
+      )
+
+(setq org-latex-minted-options '(("breaklines" "true")
+                                 ("breakanywhere" "true")))

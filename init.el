@@ -75,6 +75,9 @@
     ;; autocomplete
     company
 
+    ;; move text lines and block around
+    move-text
+
     ;;snippets
     yasnippet))
 
@@ -144,6 +147,7 @@
 (load "setup-haskell.el")
 
 ;; OrgMode
+
 (load "setup-org.el")
 (setq org-element-use-cache nil)
 (custom-set-variables
@@ -160,14 +164,19 @@
  '(haskell-process-suggest-remove-import-lines t)
  '(haskell-process-type (quote cabal-repl))
  '(haskell-tags-on-save t)
- '(org-agenda-files (quote ("~/Dropbox/etc/spd/todo.org" "~/Dropbox/todo.org")))
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org")))
  '(org-log-into-drawer t)
  '(package-selected-packages
    (quote
-    (hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell company clojurescript-mode clojure-mode-extra-font-locking cider))))
+    (org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell company clojurescript-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;(load "setup-org-latex.el")
+
