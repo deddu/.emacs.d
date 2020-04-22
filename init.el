@@ -78,6 +78,9 @@
     ;; move text lines and block around
     move-text
 
+    ;; http language support for babel
+    ob-http
+
     ;;snippets
     yasnippet))
 

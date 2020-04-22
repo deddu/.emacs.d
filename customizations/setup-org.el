@@ -44,6 +44,7 @@
  'org-babel-load-languages
  '((js . t)
    (python . t)
+   (http . t)
    ))
 
 (setq org-export-latex-listings 'minted)
