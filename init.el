@@ -52,13 +52,17 @@
 
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
-    ;; of ido
-    ido-ubiquitous
-
+    ;; of ido. 3 of those ido or ivy or helm. install counsel to bring in ivy and deps.
+    ;; ido-ubiquitous
+    ivy
+    swiper
+    counsel
+    ivy-rich
+    
     ;; Enhances M-x to allow easier execution of commands. Provides
     ;; a filterable list of possible commands in the minibuffer
     ;; http://www.emacswiki.org/emacs/Smex
-    smex
+    ;; smex
 
     ;; project navigation
     projectile
@@ -80,7 +84,13 @@
 
     ;; http language support for babel
     ob-http
-
+    ;; somehting latex related
+    auctex 
+    ;; cool theme
+    zeno-theme 
+    ;; bibtex references for org mode   
+    org-ref
+    ;; org-ref-ivy-cite
     ;;snippets
     yasnippet))
 
@@ -179,7 +189,7 @@
  '(org-log-into-drawer t)
  '(package-selected-packages
    (quote
-    (zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell company clojurescript-mode clojure-mode-extra-font-locking cider))))
+    (all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell company clojurescript-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

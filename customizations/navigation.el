@@ -26,36 +26,109 @@
 ;; name, ido will narrow down the list of buffers to match the text
 ;; you've typed in
 ;; http://www.emacswiki.org/emacs/InteractivelyDoThings
-(ido-mode t)
 
-;; This allows partial matches, e.g. "tl" will match "Tyrion Lannister"
-(setq ido-enable-flex-matching t)
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "(%d/%d) ")
+(global-set-key (kbd "C-s") 'swiper-isearch)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "M-y") 'counsel-yank-pop)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "<f2> j") 'counsel-set-variable)
+(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+(global-set-key (kbd "C-c v") 'ivy-push-view)
+(global-set-key (kbd "C-c V") 'ivy-pop-view)
+(global-set-key (kbd "C-c c") 'counsel-compile)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c L") 'counsel-git-log)
+(global-set-key (kbd "C-c k") 'counsel-rg)
+(global-set-key (kbd "C-c m") 'counsel-linux-app)
+(global-set-key (kbd "C-c n") 'counsel-fzf)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-c J") 'counsel-file-jump)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(global-set-key (kbd "C-c w") 'counsel-wmctrl)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "C-c b") 'counsel-bookmark)
+(global-set-key (kbd "C-c d") 'counsel-descbinds)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c o") 'counsel-outline)
+(global-set-key (kbd "C-c t") 'counsel-load-theme)
+(global-set-key (kbd "C-c F") 'counsel-org-file)
 
-;; Turn this behavior off because it's annoying
-(setq ido-use-filename-at-point nil)
+(require 'ivy-rich)
+(ivy-rich-mode 1)
+'(ivy-switch-buffer
+  (:columns
+   ((ivy-switch-buffer-transformer (:width 30))    ; add face by the original transformer
+    (ivy-rich-switch-buffer-size (:width 7))  ; return buffer size
+    (ivy-rich-switch-buffer-indicators (:width 4 :face error :align right))  ; return buffer indicator
+    (ivy-rich-switch-buffer-major-mode (:width 12 :face warning))            ; return major mode info
+    (ivy-rich-switch-buffer-project (:width 15 :face success))               ; return project name `projectile'
+    (ivy-rich-switch-buffer-path (:width (lambda (x) (ivy-rich-switch-buffer-shorten-path x (ivy-rich-minibuffer-width 0.3))))))  ; return file path relative to project root or `default-directory' if project is nil
+   :predicate
+   (lambda (cand) (get-buffer cand)))
+  counsel-find-file
+  (:columns
+   ((ivy-read-file-transformer)
+    (ivy-rich-counsel-find-file-truename (:face font-lock-doc-face))))
+  counsel-M-x
+  (:columns
+   ((counsel-M-x-transformer (:width 40))
+    (ivy-rich-counsel-function-docstring (:face font-lock-doc-face)))) ; return docstring of the command
+  counsel-describe-function
+  (:columns
+   ((counsel-describe-function-transformer (:width 40))
+    (ivy-rich-counsel-function-docstring (:face font-lock-doc-face))))  ; return docstring of the function
+  counsel-describe-variable
+  (:columns
+   ((counsel-describe-variable-transformer (:width 40))
+    (ivy-rich-counsel-variable-docstring (:face font-lock-doc-face))))  ; return docstring of the variable
+  counsel-recentf
+  (:columns
+   ((ivy-rich-candidate (:width 0.8))
+    (ivy-rich-file-last-modified-time (:face font-lock-comment-face))))  ; return last modified time of the file
+  package-install
+  (:columns
+   ((ivy-rich-candidate (:width 30))
+    (ivy-rich-package-version (:width 16 :face font-lock-comment-face))  ; return package version
+    (ivy-rich-package-archive-summary (:width 7 :face font-lock-builtin-face))  ; return archive summary
+    (ivy-rich-package-install-summary (:face font-lock-doc-face)))))  ; return package description
 
-;; Don't try to match file across all "work" directories; only match files
-;; in the current directory displayed in the minibuffer
-(setq ido-auto-merge-work-directories-length -1)
 
-;; Includes buffer names of recently open files, even if they're not
-;; open now
-(setq ido-use-virtual-buffers t)
+(defun ivy-rich-switch-buffer-icon (candidate)
+  (with-current-buffer
+      (get-buffer candidate)
+    (let ((icon (all-the-icons-icon-for-mode major-mode)))
+      (if (symbolp icon)
+          (all-the-icons-icon-for-mode 'fundamental-mode)
+        icon))))
 
-;; This enables ido in all contexts where it could be useful, not just
-;; for selecting buffer and file names
-(ido-ubiquitous-mode 1)
+(setq ivy-rich-display-transformers-list
+      '(ivy-switch-buffer
+        (:columns
+         ((ivy-rich-switch-buffer-icon (:width 2))
+          (ivy-rich-candidate (:width 30))
+          (ivy-rich-switch-buffer-size (:width 7))
+          (ivy-rich-switch-buffer-indicators (:width 4 :face error :align right))
+          (ivy-rich-switch-buffer-major-mode (:width 12 :face warning))
+          (ivy-rich-switch-buffer-project (:width 15 :face success))
+          (ivy-rich-switch-buffer-path (:width (lambda (x) (ivy-rich-switch-buffer-shorten-path x (ivy-rich-minibuffer-width 0.3))))))
+         :predicate
+         (lambda (cand) (get-buffer cand)))))
 
 ;; Shows a list of buffers
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer)
+(setq ivy-rich-path-style 'abbrev)
 
 
-;; Enhances M-x to allow easier execution of commands. Provides
-;; a filterable list of possible commands in the minibuffer
-;; http://www.emacswiki.org/emacs/Smex
-(setq smex-save-file (concat user-emacs-directory ".smex-items"))
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
+
 
 ;; projectile everywhere!
 (projectile-global-mode)

@@ -54,6 +54,16 @@
       '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f")
       )
+(setq org-ref-completion-library 'org-ref-ivy-cite)
+(require 'org-ref)
 
 (setq org-latex-minted-options '(("breaklines" "true")
                                  ("breakanywhere" "true")))
+
+
+(setq reftex-default-bibliography '("~/Dropbox/etc/refs/references.bib"))
+
+;; see org-ref for use of these variables
+(setq org-ref-bibliography-notes "~/Dropbox/etc/refs/bibliography/notes.org"
+      org-ref-default-bibliography '("~/Dropbox/etc/refs/bibliography/references.bib")
+      org-ref-pdf-directory "~/Dropbox/etc/refs/bibliography/bibtex-pdfs/")
