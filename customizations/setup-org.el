@@ -8,7 +8,7 @@
 ;; Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key "\C-cb" 'org-switchb)
 
 (setq org-todo-keyword-faces
            '(("TODO" . org-warning) 
