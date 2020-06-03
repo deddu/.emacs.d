@@ -55,7 +55,7 @@
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (global-set-key (kbd "C-c w") 'counsel-wmctrl)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "C-c b") 'counsel-bookmark)
+;; (global-set-key (kbd "C-c b") 'counsel-bookmark) i like org buffer more
 (global-set-key (kbd "C-c d") 'counsel-descbinds)
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-c o") 'counsel-outline)

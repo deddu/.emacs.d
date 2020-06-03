@@ -45,6 +45,7 @@
  '((js . t)
    (python . t)
    (http . t)
+(shell . t)
    ))
 
 (setq org-export-latex-listings 'minted)
