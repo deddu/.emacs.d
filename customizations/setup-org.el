@@ -45,9 +45,9 @@
  '((js . t)
    (python . t)
    (http . t)
-(shell . t)
+   (shell . t)
    ))
-
+(setq org-babel-python-command "python3")
 (setq org-export-latex-listings 'minted)
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))

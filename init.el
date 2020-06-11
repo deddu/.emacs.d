@@ -91,6 +91,9 @@
     ;; bibtex references for org mode   
     org-ref
     ;; org-ref-ivy-cite
+    ;; python autocompletion
+    elpy
+    
     ;;snippets
     yasnippet))
 
@@ -158,7 +161,7 @@
 ;;(load "setup-clojurescript.el")
 (load "setup-js.el")
 (load "setup-haskell.el")
-
+(load "setup-python.el")
 ;; OrgMode
 
 (load "setup-org.el")
@@ -189,7 +192,7 @@
  '(org-log-into-drawer t)
  '(package-selected-packages
    (quote
-    (all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell company clojurescript-mode clojure-mode-extra-font-locking cider))))
+    (elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
