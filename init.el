@@ -92,8 +92,11 @@
     org-ref
     ;; org-ref-ivy-cite
     ;; python autocompletion
-    elpy
-    
+    ;; elpy
+    lsp-mode
+    lsp-ivy
+    flycheck
+    lsp-ui
     ;;snippets
     yasnippet))
 
@@ -192,7 +195,7 @@
  '(org-log-into-drawer t)
  '(package-selected-packages
    (quote
-    (elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider))))
+    (company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
