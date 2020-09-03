@@ -46,6 +46,7 @@
    (python . t)
    (http . t)
    (shell . t)
+(plantuml . t)
    ))
 (setq org-babel-python-command "python3")
 (setq org-export-latex-listings 'minted)
@@ -68,3 +69,15 @@
 (setq org-ref-bibliography-notes "~/Dropbox/etc/refs/bibliography/notes.org"
       org-ref-default-bibliography '("~/Dropbox/etc/refs/bibliography/references.bib")
       org-ref-pdf-directory "~/Dropbox/etc/refs/bibliography/bibtex-pdfs/")
+
+
+(setq org-plantuml-jar-path
+      (expand-file-name "~/bin/plantuml.jar"))
+
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(define-key mc/keymap (kbd "<return>") nil)

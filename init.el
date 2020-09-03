@@ -9,7 +9,7 @@
 (add-to-list 'package-archives
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives
              '("gnu" . "http://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives
@@ -97,6 +97,9 @@
     lsp-ivy
     flycheck
     lsp-ui
+
+    ;; multi-cursors
+    multiple-cursors
     ;;snippets
     yasnippet))
 
@@ -179,23 +182,19 @@
  '(ansi-color-names-vector
    (vector "#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#000000"))
  '(coffee-tab-width 2)
- '(custom-enabled-themes (quote (zeno)))
+ '(custom-enabled-themes '(zeno))
  '(custom-safe-themes
-   (quote
-    ("0eccc893d77f889322d6299bec0f2263bffb6d3ecc79ccef76f1a2988859419e" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default)))
+   '("0eccc893d77f889322d6299bec0f2263bffb6d3ecc79ccef76f1a2988859419e" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
  '(fci-rule-color "#2a2a2a")
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
  '(haskell-process-suggest-remove-import-lines t)
- '(haskell-process-type (quote cabal-repl))
+ '(haskell-process-type 'cabal-repl)
  '(haskell-tags-on-save t)
- '(org-agenda-files
-   (quote
-    ("~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org")))
+ '(org-agenda-files '("~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org"))
  '(org-log-into-drawer t)
  '(package-selected-packages
-   (quote
-    (company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider))))
+   '(multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
