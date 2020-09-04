@@ -72,7 +72,7 @@
 
 
 (setq org-plantuml-jar-path
-      (expand-file-name "~/bin/plantuml.jar"))
+      (expand-file-name "~/Dropbox/bin/plantuml.jar"))
 
 
 (require 'multiple-cursors)
@@ -81,3 +81,9 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (define-key mc/keymap (kbd "<return>") nil)
+
+
+(setq org-roam-directory "~/Dropbox/zk")
+(add-hook 'after-init-hook 'org-roam-mode)
+
+
