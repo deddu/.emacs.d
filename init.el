@@ -101,6 +101,8 @@
     lsp-ivy
     flycheck
     lsp-ui
+    ;; use-packge is a cool thing to help with package inizialization etc. 
+    use-package
 
     ;; multi-cursors
     multiple-cursors
