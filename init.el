@@ -198,6 +198,7 @@
  '(haskell-process-type 'cabal-repl)
  '(haskell-tags-on-save t)
  '(org-agenda-files '("~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org"))
+ '(org-export-backends '(ascii beamer html icalendar latex md odt))
  '(org-log-into-drawer t)
  '(package-selected-packages
    '(org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider)))

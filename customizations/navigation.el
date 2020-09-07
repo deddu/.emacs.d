@@ -124,7 +124,7 @@
          (lambda (cand) (get-buffer cand)))))
 
 ;; Shows a list of buffers
-;; (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 (setq ivy-rich-path-style 'abbrev)
 
 

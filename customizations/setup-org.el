@@ -24,9 +24,11 @@
 
 ))
 
-(setq org-refile-targets
-      '((nil :maxlevel . 3)
-        (org-agenda-files :maxlevel . 3)))
+;; (setq org-refile-targets
+      ;; '((nil :maxlevel . 3)
+        ;; (org-agenda-files :maxlevel . 3)))
+(setq org-refile-use-outline-path 'file)
+(setq org-refile-allow-creating-parent-nodes 'confirm)
 
 ;; Set to the location of your Org files on your local system
 (setq org-directory "~/Dropbox")
@@ -46,9 +48,14 @@
    (python . t)
    (http . t)
    (shell . t)
-(plantuml . t)
+   (sql . t)
+   (plantuml . t)
    ))
+
+
 (setq org-babel-python-command "python3")
+
+
 (setq org-export-latex-listings 'minted)
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted"))
@@ -91,11 +98,41 @@
       :hook
       (after-init . org-roam-mode)
       :custom
-      (org-roam-directory "~/Dropbox/zk")
+      (org-roam-directory "~/Dropbox/etc")
+      (org-roam-db-location "~/Dropbox/etc/zk/org-roam.db")
+      (org-roam-tag-sources '(prop last-directory))
+      (org-roam-capture-templates 
+       '(
+        ("d" "default" plain (function org-roam-capture--get-point)
+          "%?"
+          :file-name "zk/%<%Y%m%d%H%M%S>-${slug}"
+          :head "#+title: ${title}\n"
+          :unnarrowed t)
+        ("p" "people" plain (function org-roam-capture--get-point)
+         "%?"
+         :file-name "ppl/%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n"
+         :unnarrowed t)         
+        ("t" "tech" plain (function org-roam-capture--get-point)
+         "%?"
+         :file-name "tech/%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n"
+         :unnarrowed t)
+        ("w" "workplace" plain (function org-roam-capture--get-point)
+         "%?"
+         :file-name "jobs/%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n"
+         :unnarrowed t)         
+        ("T" "ticket" plain (function org-roam-capture--get-point)
+         "%?"
+         :file-name "sctg/tickets/%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n"
+         :unnarrowed t)         
+         ))
       :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
-               ("C-c n g" . org-roam-graph-show))
+               ("C-c n g" . org-roam-graph))
               :map org-mode-map
               (("C-c n i" . org-roam-insert))
               (("C-c n I" . org-roam-insert-immediate))))
