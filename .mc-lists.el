@@ -4,9 +4,16 @@
 (setq mc/cmds-to-run-for-all
       '(
         beginning-of-visual-line
+        end-of-visual-line
+        indent-for-tab-command
+        ns-copy-including-secondary
         org-cycle
+        org-force-self-insert
+        org-metaleft
+        org-metaup
         org-return
         org-self-insert-command
+        org-yank
         ))
 
 (setq mc/cmds-to-run-once

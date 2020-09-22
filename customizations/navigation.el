@@ -48,17 +48,17 @@
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
 (global-set-key (kbd "C-c L") 'counsel-git-log)
 (global-set-key (kbd "C-c k") 'counsel-rg)
-(global-set-key (kbd "C-c m") 'counsel-linux-app)
-(global-set-key (kbd "C-c n") 'counsel-fzf)
-(global-set-key (kbd "C-x l") 'counsel-locate)
+;; (global-set-key (kbd "C-c m") 'counsel-linux-app) not on linux, not used, cmd+space on mac works well enough
+(global-set-key (kbd "C-c m") 'counsel-fzf)
+;; (global-set-key (kbd "C-c l") 'counsel-locate)
 (global-set-key (kbd "C-c J") 'counsel-file-jump)
-(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+;; (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (global-set-key (kbd "C-c w") 'counsel-wmctrl)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 ;; (global-set-key (kbd "C-c b") 'counsel-bookmark) i like org buffer more
 (global-set-key (kbd "C-c d") 'counsel-descbinds)
 (global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c o") 'counsel-outline)
+;; (global-set-key (kbd "C-c o") 'counsel-outline)
 (global-set-key (kbd "C-c t") 'counsel-load-theme)
 (global-set-key (kbd "C-c F") 'counsel-org-file)
 
