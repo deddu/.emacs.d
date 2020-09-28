@@ -188,16 +188,17 @@
  '(ansi-color-names-vector
    (vector "#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#000000"))
  '(coffee-tab-width 2)
- '(custom-enabled-themes '(zeno))
+ '(custom-enabled-themes '(zenburn))
  '(custom-safe-themes
-   '("0eccc893d77f889322d6299bec0f2263bffb6d3ecc79ccef76f1a2988859419e" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
+   '("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "0eccc893d77f889322d6299bec0f2263bffb6d3ecc79ccef76f1a2988859419e" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
  '(fci-rule-color "#2a2a2a")
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
  '(haskell-process-suggest-remove-import-lines t)
  '(haskell-process-type 'cabal-repl)
  '(haskell-tags-on-save t)
- '(org-agenda-files '("~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org"))
+ '(org-agenda-files
+   '("~/Dropbox/refile-beorg.org" "~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org"))
  '(org-export-backends '(ascii beamer html icalendar latex md odt))
  '(org-log-into-drawer t)
  '(package-selected-packages

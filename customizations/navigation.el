@@ -20,12 +20,6 @@
 (setq recentf-max-menu-items 40)
 
 
-;; ido-mode allows you to more easily navigate choices. For example,
-;; when you want to switch buffers, ido presents you with a list
-;; of buffers in the the mini-buffer. As you start to type a buffer's
-;; name, ido will narrow down the list of buffers to match the text
-;; you've typed in
-;; http://www.emacswiki.org/emacs/InteractivelyDoThings
 
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
@@ -33,6 +27,7 @@
 (global-set-key (kbd "C-s") 'swiper-isearch)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x f") 'counsel-find-file)
 (global-set-key (kbd "M-y") 'counsel-yank-pop)
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
 (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
@@ -43,22 +38,16 @@
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 (global-set-key (kbd "C-c v") 'ivy-push-view)
 (global-set-key (kbd "C-c V") 'ivy-pop-view)
-(global-set-key (kbd "C-c c") 'counsel-compile)
+;; (global-set-key (kbd "C-c c") 'counsel-compile)
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
 (global-set-key (kbd "C-c L") 'counsel-git-log)
 (global-set-key (kbd "C-c k") 'counsel-rg)
-;; (global-set-key (kbd "C-c m") 'counsel-linux-app) not on linux, not used, cmd+space on mac works well enough
-(global-set-key (kbd "C-c m") 'counsel-fzf)
-;; (global-set-key (kbd "C-c l") 'counsel-locate)
+(global-set-key (kbd "C-c f") 'counsel-fzf)
 (global-set-key (kbd "C-c J") 'counsel-file-jump)
-;; (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-(global-set-key (kbd "C-c w") 'counsel-wmctrl)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
-;; (global-set-key (kbd "C-c b") 'counsel-bookmark) i like org buffer more
 (global-set-key (kbd "C-c d") 'counsel-descbinds)
 (global-set-key (kbd "C-c g") 'counsel-git)
-;; (global-set-key (kbd "C-c o") 'counsel-outline)
 (global-set-key (kbd "C-c t") 'counsel-load-theme)
 (global-set-key (kbd "C-c F") 'counsel-org-file)
 
@@ -132,6 +121,9 @@
 
 ;; projectile everywhere!
 (projectile-global-mode)
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;; magit 
 (global-set-key (kbd "C-x g") 'magit-status)

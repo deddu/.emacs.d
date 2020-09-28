@@ -1,5 +1,5 @@
 (add-hook 'haskell-mode-hook #'hindent-mode)
-(let ((my-cabal-path (expand-file-name "/Users/deddu/Library/Haskell/bin")))
+(let ((my-cabal-path (expand-file-name "~/Library/Haskell/bin")))
   (setenv "PATH" (concat my-cabal-path path-separator (getenv "PATH")))
   (add-to-list 'exec-path my-cabal-path))
 

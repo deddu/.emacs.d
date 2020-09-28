@@ -118,8 +118,13 @@
          :file-name "tech/%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n"
          :unnarrowed t)
-        ("w" "workplace" plain (function org-roam-capture--get-point)
+        ("c" "company" plain (function org-roam-capture--get-point)
          "%?"
+         :file-name "jobs/%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n"
+         :unnarrowed t)         
+        ("w" "workplace" plain (function org-roam-capture--get-point)
+         (file "~/Dropbox/etc/org/workplace_template.org")
          :file-name "jobs/%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n"
          :unnarrowed t)         
@@ -127,8 +132,16 @@
          "%?"
          :file-name "sctg/tickets/%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n"
-         :unnarrowed t)         
-         ))
+         :unnarrowed t)     
+        ("D" "discovery" plain (function org-roam-capture--get-point)
+         (file "~/Dropbox/etc/discoveries/problem-solving_template.org")
+         :file-name "sctg/tickets/%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n#+roam_tags: discovery"
+         :unnarrowed t)     
+
+    
+         )
+)
       :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
