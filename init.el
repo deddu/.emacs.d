@@ -100,6 +100,8 @@
     lsp-mode
     lsp-ivy
     flycheck
+    py-autopep8
+    blacken
     lsp-ui
     ;; use-packge is a cool thing to help with package inizialization etc. 
     use-package
