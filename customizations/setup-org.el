@@ -25,9 +25,10 @@
 ))
 
 (setq org-refile-targets
-      '((nil :maxlevel . 3)
-        (org-agenda-files :maxlevel . 3)))
-;; (setq org-refile-use-outline-path 'file)
+      '((nil :maxlevel . 1)
+        (org-agenda-files :maxlevel . 2)))
+(setq org-refile-use-outline-path 'file)
+(setq org-outline-path-complete-in-steps nil)
 (setq org-refile-allow-creating-parent-nodes 'confirm)
 
 ;; Set to the location of your Org files on your local system

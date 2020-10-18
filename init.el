@@ -198,7 +198,7 @@
  '(haskell-process-type 'cabal-repl)
  '(haskell-tags-on-save t)
  '(org-agenda-files
-   '("~/Dropbox/refile-beorg.org" "~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org"))
+   '("~/Dropbox/etc/ppl/social.org" "~/Dropbox/refile-beorg.org" "~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org"))
  '(org-export-backends '(ascii beamer html icalendar latex md odt))
  '(org-log-into-drawer t)
  '(package-selected-packages
