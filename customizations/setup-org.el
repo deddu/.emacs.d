@@ -1,6 +1,21 @@
 ;;;
 ;;; Org Mode
 ;;;
+(use-package org-download
+    :after org
+    :defer nil
+    :custom
+    (org-download-method 'directory)
+    (org-download-image-dir "images")
+    (org-download-heading-lvl nil)
+    (org-download-timestamp "%Y%m%d-%H%M%S_")
+    (org-image-actual-width 300)
+    (org-download-screenshot-method "/usr/local/bin/pngpaste %s")
+    :bind
+    ("C-M-y" . org-download-screenshot)
+    :config
+    (require 'org-download))
+
 
 ;(add-to-list 'load-path (expand-file-name "~/Dropbox/etc/org"))
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
@@ -51,6 +66,7 @@
    (shell . t)
    (sql . t)
    (plantuml . t)
+   (elasticsearch . t)
    ))
 
 
@@ -137,7 +153,12 @@
         ("D" "discovery" plain (function org-roam-capture--get-point)
          (file "~/Dropbox/etc/discoveries/problem-solving_template.org")
          :file-name "sctg/tickets/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n#+roam_tags: discovery"
+         :head "#+title: ${title}\n#+roam_tags: discovery\n"
+         :unnarrowed t)     
+        ("r" "reinvent" plain (function org-roam-capture--get-point)
+         (file "~/Dropbox/etc/aws/reinvent/reinvent_template.org")
+         :file-name "aws/reinvent/2020/%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n#+roam_tags: reinvent re2020\n"
          :unnarrowed t)     
 
     

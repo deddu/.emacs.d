@@ -4,10 +4,11 @@
 
 ;; Define package repositories
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("tromey" . "http://tromey.com/elpa/") t)
+
+;; (add-to-list 'package-archives
+             ;; '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;; (add-to-list 'package-archives
+             ;; '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives
@@ -86,6 +87,10 @@
 
     ;; http language support for babel
     ob-http
+    ;; elastic search mode
+    es-mode
+    ;; yaml support
+    yaml-mode
     ;; somehting latex related
     auctex 
     ;; cool theme
@@ -94,6 +99,8 @@
     org-ref
     ;; zettelkasten installation
     org-roam
+    ;; download snapshots
+    org-download
     ;; org-ref-ivy-cite
     ;; python autocompletion
     ;; elpy
@@ -103,6 +110,7 @@
     py-autopep8
     blacken
     lsp-ui
+    ein
     ;; use-packge is a cool thing to help with package inizialization etc. 
     use-package
 
@@ -170,12 +178,14 @@
 ;; For editing lisps
 (load "elisp-editing.el")
 
-;; Langauage-specific
+;; Language-specific
 (load "setup-clojure.el")
 ;;(load "setup-clojurescript.el")
 (load "setup-js.el")
 (load "setup-haskell.el")
 (load "setup-python.el")
+(load "setup-databases.el")
+
 ;; OrgMode
 
 (load "setup-org.el")
@@ -200,11 +210,11 @@
  '(haskell-process-type 'cabal-repl)
  '(haskell-tags-on-save t)
  '(org-agenda-files
-   '("~/Dropbox/etc/ppl/social.org" "~/Dropbox/refile-beorg.org" "~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org"))
+   '("~/Dropbox/etc/tech/20201201130107-reinvent2020.org" "~/Dropbox/todo.org"))
  '(org-export-backends '(ascii beamer html icalendar latex md odt))
  '(org-log-into-drawer t)
  '(package-selected-packages
-   '(zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider)))
+   '(org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
