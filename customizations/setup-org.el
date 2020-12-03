@@ -1,25 +1,14 @@
 ;;;
 ;;; Org Mode
 ;;;
-(use-package org-download
-    :after org
-    :defer nil
-    :custom
-    (org-download-method 'directory)
-    (org-download-image-dir "images")
-    (org-download-heading-lvl nil)
-    (org-download-timestamp "%Y%m%d-%H%M%S_")
-    (org-image-actual-width 300)
-    (org-download-screenshot-method "/usr/local/bin/pngpaste %s")
-    :bind
-    ("C-M-y" . org-download-screenshot)
-    :config
-    (require 'org-download))
 
 
 ;(add-to-list 'load-path (expand-file-name "~/Dropbox/etc/org"))
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 (require 'org)
+
+(require 'ob-async)
+
 ;; Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
@@ -52,6 +41,10 @@
 (setq org-mobile-inbox-for-pull "~/Dropbox/flagged.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+
+;; adds timezone to org timestamps
+;; found it in https://emacs.stackexchange.com/questions/13463/specify-timezone-in-org-date-format
+(setq org-time-stamp-formats '("<%Y-%m-%d %a>" . "<%Y-%m-%d %a %H:%M %Z>"))
 
 
 (setq org-clock-persist 'history)
@@ -171,3 +164,19 @@
               :map org-mode-map
               (("C-c n i" . org-roam-insert))
               (("C-c n I" . org-roam-insert-immediate))))
+
+
+(use-package org-download
+    :after org
+    :defer nil
+    :custom
+    (org-download-method 'directory)
+    (org-download-image-dir "images")
+    (org-download-heading-lvl nil)
+    (org-download-timestamp "%Y%m%d-%H%M%S_")
+    (org-image-actual-width 300)
+    (org-download-screenshot-method "/usr/local/bin/pngpaste %s")
+    :bind
+    ("C-M-y" . org-download-screenshot)
+    :config
+    (require 'org-download))
