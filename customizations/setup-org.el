@@ -180,3 +180,8 @@
     ("C-M-y" . org-download-screenshot)
     :config
     (require 'org-download))
+
+
+(use-package ox-hugo
+  :ensure t            ;Auto-install the package from Melpa (optional)
+  :after ox)
