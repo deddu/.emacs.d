@@ -8,6 +8,7 @@
 (require 'org)
 
 (require 'ob-async)
+(require 'ox-confluence)
 
 ;; Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)
@@ -100,6 +101,7 @@
 (define-key mc/keymap (kbd "<return>") nil)
 
 
+
 ;; (setq org-roam-directory "~/Dropbox/zk")
 ;; (add-hook 'after-init-hook 'org-roam-mode)
 
@@ -153,6 +155,11 @@
          :file-name "aws/reinvent/2020/%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n#+roam_tags: reinvent re2020\n"
          :unnarrowed t)     
+        ("R" "recipe" plain (function org-roam-capture--get-point)
+         (file "~/Dropbox/etc/recipes/recipe_template.org")
+         :file-name "recipes/%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n#+roam_tags: recipes\n"
+         :unnarrowed t)     
 
     
          )
@@ -185,3 +192,16 @@
 (use-package ox-hugo
   :ensure t            ;Auto-install the package from Melpa (optional)
   :after ox)
+
+
+(use-package ox-slack
+  :ensure t            ;Auto-install the package from Melpa (optional)
+  :after ox)
+
+
+(use-package ob-cypher
+  :ensure t
+  :config
+  (add-to-list 'org-babel-load-languages '(cypher . t))
+  (org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages)
+  (add-to-list 'org-babel-tangle-lang-exts '("cypher" . "cypher")))
