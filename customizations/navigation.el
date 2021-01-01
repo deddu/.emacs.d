@@ -132,4 +132,5 @@
 (use-package "neotree"
   :ensure t
   :bind 
-  ("<f8>" . neotree-toggle))
+  ("<f8>" . neotree-toggle)
+  ("<f7>" . neotree-dir))
