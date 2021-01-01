@@ -127,3 +127,9 @@
 
 ;; magit 
 (global-set-key (kbd "C-x g") 'magit-status)
+
+
+(use-package "neotree"
+  :ensure t
+  :bind 
+  ("<f8>" . neotree-toggle))
