@@ -6,14 +6,17 @@
         beginning-of-visual-line
         end-of-visual-line
         indent-for-tab-command
+        kill-visual-line
         ns-copy-including-secondary
         org-cycle
+        org-delete-char
         org-force-self-insert
         org-metaleft
         org-metaup
         org-return
         org-self-insert-command
         org-yank
+        yaml-electric-backspace
         ))
 
 (setq mc/cmds-to-run-once

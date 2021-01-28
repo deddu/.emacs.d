@@ -205,3 +205,13 @@
   (add-to-list 'org-babel-load-languages '(cypher . t))
   (org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages)
   (add-to-list 'org-babel-tangle-lang-exts '("cypher" . "cypher")))
+
+(use-package org-journal
+  :ensure t
+  :bind
+  ("C-c n j" . org-journal-new-entry)
+  :custom
+  (org-journal-date-prefix "#+title: ")
+  (org-journal-file-format "%Y-%m-%d.org")
+  (org-journal-dir "~/Dropbox/etc/journal/")
+  (org-journal-date-format "%A, %d %B %Y"))
