@@ -216,7 +216,7 @@
  '(haskell-process-type 'cabal-repl)
  '(haskell-tags-on-save t)
  '(org-agenda-files
-   '("~/Dropbox/etc/items-tracking.org" "~/Dropbox/etc/ppl/social.org" "~/Dropbox/etc/tech/20201201130107-reinvent2020.org" "~/Dropbox/refile-beorg.org" "~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org"))
+   '("~/Dropbox/refile-beorg.org" "~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org"))
  '(org-export-backends '(ascii beamer html icalendar latex md odt confluence))
  '(org-log-into-drawer t)
  '(package-selected-packages

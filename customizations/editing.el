@@ -4,6 +4,8 @@
 (setq-default word-wrap t)
 (global-visual-line-mode t)
 
+(global-auto-revert-mode t)
+
 ;; move text around M-up and M-down, also works on region
 (move-text-default-bindings)
 

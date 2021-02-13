@@ -212,6 +212,7 @@
   ("C-c n j" . org-journal-new-entry)
   :custom
   (org-journal-date-prefix "#+title: ")
-  (org-journal-file-format "%Y-%m-%d.org")
+  (org-journal-time-format "%H:%M %Z")
+  (org-journal-file-format "%Y%m%d.org")
   (org-journal-dir "~/Dropbox/etc/journal/")
   (org-journal-date-format "%A, %d %B %Y"))
