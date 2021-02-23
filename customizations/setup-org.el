@@ -155,6 +155,11 @@
          :file-name "aws/reinvent/2020/%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n#+roam_tags: reinvent re2020\n"
          :unnarrowed t)     
+        ("k" "trek10" plain (function org-roam-capture--get-point)
+         (file "~/Dropbox/etc/trek10/trek10_template.org")
+         :file-name "trek10/%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n"
+         :unnarrowed t)     
         ("R" "recipe" plain (function org-roam-capture--get-point)
          (file "~/Dropbox/etc/recipes/recipe_template.org")
          :file-name "recipes/%<%Y%m%d%H%M%S>-${slug}"
