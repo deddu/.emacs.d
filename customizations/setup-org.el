@@ -165,7 +165,11 @@
          :file-name "recipes/%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n#+roam_tags: recipes\n"
          :unnarrowed t)     
-
+        ("b" "biz - stock trading" plain (function org-roam-capture--get-point)
+         (file "~/Dropbox/etc/biz/biz_template.org")
+         :file-name "biz/%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n#+roam_tags: trading\n"
+         :unnarrowed t)  
     
          )
 )
