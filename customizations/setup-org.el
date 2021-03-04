@@ -141,7 +141,7 @@
          :head "#+title: ${title}\n"
          :unnarrowed t)         
         ("T" "ticket" plain (function org-roam-capture--get-point)
-         "%?"
+         (file "~/Dropbox/etc/sctg/tickets/tkt-template.org")
          :file-name "sctg/tickets/%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n"
          :unnarrowed t)     
