@@ -60,6 +60,7 @@
    (shell . t)
    (sql . t)
    (plantuml . t)
+   (dot . t)
    (elasticsearch . t)
    ))
 
