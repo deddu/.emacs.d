@@ -24,10 +24,6 @@
              ("WONTDO" . "purple")
              ("STARTED" . (:foreground "orange" :weight bold))))
 
-(setq org-agenda-files
-      '("~/Dropbox/todo.org" 
-
-))
 
 (setq org-refile-targets
       '((nil :maxlevel . 1)
@@ -37,11 +33,7 @@
 (setq org-refile-allow-creating-parent-nodes 'confirm)
 
 ;; Set to the location of your Org files on your local system
-(setq org-directory "~/Dropbox")
-;; Set to the name of the file where new notes will be stored
-(setq org-mobile-inbox-for-pull "~/Dropbox/flagged.org")
-;; Set to <your Dropbox root directory>/MobileOrg.
-(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+(setq org-directory "~/Dropbox/etc")
 
 ;; adds timezone to org timestamps
 ;; found it in https://emacs.stackexchange.com/questions/13463/specify-timezone-in-org-date-format
@@ -170,6 +162,11 @@
          (file "~/Dropbox/etc/biz/biz_template.org")
          :file-name "biz/%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n#+roam_tags: trading\n"
+         :unnarrowed t)  
+        ("f" " - budgeting, forecasting, expenses" plain (function org-roam-capture--get-point)
+         (file "~/Dropbox/etc/biz/money_template.org")
+         :file-name "biz/%<%Y%m%d%H%M>-${slug}"
+         :head "#+title: ${title}\n"
          :unnarrowed t)  
     
          )

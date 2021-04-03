@@ -116,6 +116,8 @@
     blacken
     lsp-ui
     ein
+    ;; other utilities
+    oauth2
     ;; use-packge is a cool thing to help with package inizialization etc. 
     use-package
 
@@ -216,11 +218,11 @@
  '(haskell-process-type 'cabal-repl)
  '(haskell-tags-on-save t)
  '(org-agenda-files
-   '("~/Dropbox/refile-beorg.org" "~/Dropbox/etc/sctg/todo.org" "~/Dropbox/todo.org"))
+   '("~/Dropbox/etc/refile-beorg.org" "~/Dropbox/etc/sctg/todo.org" "~/Dropbox/etc/todo.org"))
  '(org-export-backends '(ascii beamer html icalendar latex md odt confluence))
  '(org-log-into-drawer t)
  '(package-selected-packages
-   '(org-journal elfeed neotree rustic ob-cypher org-plus-contrib ox-slack ox-hugo ob-async org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider)))
+   '(oauth2 org-journal elfeed neotree rustic ob-cypher org-plus-contrib ox-slack ox-hugo ob-async org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
