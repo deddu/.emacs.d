@@ -3,10 +3,13 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        beginning-of-defun
         beginning-of-visual-line
         end-of-visual-line
         indent-for-tab-command
         kill-visual-line
+        mouse-drag-vertical-line
+        mouse-select-window
         ns-copy-including-secondary
         org-cycle
         org-delete-char
@@ -15,6 +18,7 @@
         org-metaup
         org-return
         org-self-insert-command
+        org-table-copy-down
         org-yank
         yaml-electric-backspace
         ))

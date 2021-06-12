@@ -51,8 +51,10 @@
    (http . t)
    (shell . t)
    (sql . t)
+   (sqlite . t)
    (plantuml . t)
    (dot . t)
+   (php . t)
    (elasticsearch . t)
    ))
 
@@ -163,11 +165,18 @@
          :file-name "biz/%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n#+roam_tags: trading\n"
          :unnarrowed t)  
-        ("f" " - budgeting, forecasting, expenses" plain (function org-roam-capture--get-point)
+        ("f" "finance - budgeting, forecasting, expenses" plain (function org-roam-capture--get-point)
          (file "~/Dropbox/etc/biz/money_template.org")
          :file-name "biz/%<%Y%m%d%H%M>-${slug}"
+         :head "#+title: ${title}\n#+roam_tags: finance\n"
+         :unnarrowed t)  
+        ("a" "adrs" plain (function org-roam-capture--get-point)
+         (file "~/Dropbox/etc/sctg/adrs/template.org")
+         :file-name "sctg/adrs/%<%Y%m%d>-${slug}"
          :head "#+title: ${title}\n"
          :unnarrowed t)  
+
+
     
          )
 )

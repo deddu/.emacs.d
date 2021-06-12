@@ -9,3 +9,6 @@ projectile.cache
 auto-save-list
 backups
 elpa
+bookmarks
+.org-id-locations
+org-clock-save.el
