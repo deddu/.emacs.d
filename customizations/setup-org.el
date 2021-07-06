@@ -113,7 +113,7 @@
         ("d" "default" plain (function org-roam-capture--get-point)
           "%?"
           :file-name "zk/%<%Y%m%d%H%M%S>-${slug}"
-          :head "#+title: ${title}\n"
+          :head "#+title: ${title}\n#+roam_tags:\n"
           :unnarrowed t)
         ("p" "people" plain (function org-roam-capture--get-point)
          "%?"

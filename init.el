@@ -186,15 +186,15 @@
 (load "elisp-editing.el")
 
 ;; Language-specific
-(load "setup-clojure.el")
+;;(load "setup-clojure.el")
 ;;(load "setup-clojurescript.el")
 (load "setup-js.el")
-(load "setup-haskell.el")
+;;(load "setup-haskell.el")
 (load "setup-python.el")
 (load "setup-databases.el")
 (load "setup-docker.el")
-(load "rust.el")
-(load "feeds.el")
+;;(load "rust.el")
+;;(load "feeds.el")
 ;; OrgMode
 
 (load "setup-org.el")
@@ -223,7 +223,7 @@
  '(org-export-backends '(ascii beamer html icalendar latex md odt confluence))
  '(org-log-into-drawer t)
  '(package-selected-packages
-   '(docker-tramp oauth2 org-journal elfeed neotree rustic ob-cypher org-plus-contrib ox-slack ox-hugo ob-async org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider)))
+   '(yasnippet-snippets docker-tramp oauth2 org-journal elfeed neotree rustic ob-cypher org-plus-contrib ox-slack ox-hugo ob-async org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -1,5 +1,16 @@
 ;; Customizations relating to editing a buffer.
 
+
+;;snippets 
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode 1)
+  :config
+  (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "snippets")))
+
+
+
 ;; word wrap 
 (setq-default word-wrap t)
 (global-visual-line-mode t)

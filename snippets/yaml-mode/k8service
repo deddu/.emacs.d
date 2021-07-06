@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: k8service
+# key: k8service
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${1:myservice}
+  namespace: ${2:namespace}
+  labels:
+    app: ${1:myapp}
+spec:
+  type: NodePort # LoadBalancer | ClusterIp #default
+  selector:
+    app: ${1:myapp}
+  ports:
+    - protocol: TCP
+      port: $0
+      targetPort: $0
+      nodeport: $0

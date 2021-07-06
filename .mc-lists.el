@@ -15,6 +15,7 @@
         org-delete-char
         org-force-self-insert
         org-metaleft
+        org-metaright
         org-metaup
         org-return
         org-self-insert-command

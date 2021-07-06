@@ -1,10 +1,15 @@
-;;;; Emacs Bookmark Format Version 1 ;;;;
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-refile-last-stored"
- (filename . "~/Dropbox/etc/turing/notes/cemr-todo.org")
- (front-context-string . "** NEXT exportin")
- (rear-context-string . "MPASSEMR-1165\n\n\n")
- (position . 16603))
+(("org-capture-last-stored"
+ (filename . "~/Dropbox/etc/sctg/tickets/20210702135321-ticket_triage.org")
+ (front-context-string . "#+title: ticket ")
+ (rear-context-string)
+ (position . 1))
+("org-refile-last-stored"
+ (filename . "~/Dropbox/todo.org")
+ (front-context-string . "*** DONE Compra ")
+ (rear-context-string . "2-17 Wed 09:20]\n")
+ (position . 12195))
 )
