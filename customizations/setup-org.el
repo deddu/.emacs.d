@@ -103,6 +103,7 @@
 (use-package org-roam
       :ensure t
       :custom
+      (org-roam-v2-ack t)
       (org-roam-directory (file-truename "~/Dropbox/etc"))
       (org-roam-db-location "~/Dropbox/etc/zk/org-roam.db")
       (org-roam-tag-sources '(prop last-directory))
@@ -112,11 +113,6 @@
           :if-new (file+head "zk/%<%Y%m%d>-${slug}.org"
                              "#+title: ${title}\n")
           :unnarrowed t)
-         ;; ("d" "default" plain (function org-roam-capture--get-point)
-         ;;  "%?"
-         ;;  :file-name "zk/%<%Y%m%d>-${slug}"
-         ;;  :head "#+title: ${title}\n#+roam_tags:\n"
-         ;;  :unnarrowed t)
          ("p" "people" plain (function org-roam-capture--get-point)
           "%?"
           :if-new (file+head  "ppl/%<%Y%m%d>-${slug}.org"
