@@ -102,91 +102,93 @@
 
 (use-package org-roam
       :ensure t
-      :hook
-      (after-init . org-roam-mode)
       :custom
-      (org-roam-directory "~/Dropbox/etc")
+      (org-roam-directory (file-truename "~/Dropbox/etc"))
       (org-roam-db-location "~/Dropbox/etc/zk/org-roam.db")
       (org-roam-tag-sources '(prop last-directory))
       (org-roam-capture-templates 
        '(
-        ("d" "default" plain (function org-roam-capture--get-point)
-          "%?"
-          :file-name "zk/%<%Y%m%d%H%M%S>-${slug}"
-          :head "#+title: ${title}\n#+roam_tags:\n"
+         ("d" "default" plain "%?"
+          :if-new (file+head "zk/%<%Y%m%d>-${slug}.org"
+                             "#+title: ${title}\n")
           :unnarrowed t)
-        ("p" "people" plain (function org-roam-capture--get-point)
-         "%?"
-         :file-name "ppl/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n"
-         :unnarrowed t)         
-        ("t" "tech" plain (function org-roam-capture--get-point)
-         "%?"
-         :file-name "tech/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n"
-         :unnarrowed t)
-        ("c" "company" plain (function org-roam-capture--get-point)
-         "%?"
-         :file-name "jobs/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n"
-         :unnarrowed t)         
-        ("w" "workplace" plain (function org-roam-capture--get-point)
-         (file "~/Dropbox/etc/org/workplace_template.org")
-         :file-name "jobs/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n"
-         :unnarrowed t)         
-        ("T" "ticket" plain (function org-roam-capture--get-point)
-         (file "~/Dropbox/etc/sctg/tickets/tkt-template.org")
-         :file-name "sctg/tickets/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n"
-         :unnarrowed t)     
-        ("D" "discovery" plain (function org-roam-capture--get-point)
-         (file "~/Dropbox/etc/discoveries/problem-solving_template.org")
-         :file-name "sctg/tickets/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n#+roam_tags: discovery\n"
-         :unnarrowed t)     
-        ("r" "reinvent" plain (function org-roam-capture--get-point)
-         (file "~/Dropbox/etc/aws/reinvent/reinvent_template.org")
-         :file-name "aws/reinvent/2020/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n#+roam_tags: reinvent re2020\n"
-         :unnarrowed t)     
-        ("k" "trek10" plain (function org-roam-capture--get-point)
-         (file "~/Dropbox/etc/trek10/trek10_template.org")
-         :file-name "trek10/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n"
-         :unnarrowed t)     
-        ("R" "recipe" plain (function org-roam-capture--get-point)
-         (file "~/Dropbox/etc/recipes/recipe_template.org")
-         :file-name "recipes/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n#+roam_tags: recipes\n"
-         :unnarrowed t)     
-        ("b" "biz - stock trading" plain (function org-roam-capture--get-point)
-         (file "~/Dropbox/etc/biz/biz_template.org")
-         :file-name "biz/%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n#+roam_tags: trading\n"
-         :unnarrowed t)  
-        ("f" "finance - budgeting, forecasting, expenses" plain (function org-roam-capture--get-point)
-         (file "~/Dropbox/etc/biz/money_template.org")
-         :file-name "biz/%<%Y%m%d%H%M>-${slug}"
-         :head "#+title: ${title}\n#+roam_tags: finance\n"
-         :unnarrowed t)  
-        ("a" "adrs" plain (function org-roam-capture--get-point)
-         (file "~/Dropbox/etc/sctg/adrs/template.org")
-         :file-name "sctg/adrs/%<%Y%m%d>-${slug}"
-         :head "#+title: ${title}\n"
-         :unnarrowed t)  
-
-
-    
+         ;; ("d" "default" plain (function org-roam-capture--get-point)
+         ;;  "%?"
+         ;;  :file-name "zk/%<%Y%m%d>-${slug}"
+         ;;  :head "#+title: ${title}\n#+roam_tags:\n"
+         ;;  :unnarrowed t)
+         ("p" "people" plain (function org-roam-capture--get-point)
+          "%?"
+          :if-new (file+head  "ppl/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n")
+          :unnarrowed t)         
+         ("t" "tech" plain 
+          "%?"
+          :if-new (file+head  "tech/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n")
+          :unnarrowed t)
+         ("c" "company" plain 
+          "%?"
+          :if-new (file+head  "jobs/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n")
+          :unnarrowed t)         
+         ("w" "workplace" plain 
+          (file "~/Dropbox/etc/org/workplace_template.org")
+          :if-new (file+head  "jobs/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n")
+          :unnarrowed t)         
+         ("T" "ticket" plain 
+          (file "~/Dropbox/etc/sctg/tickets/tkt-template.org")
+          :if-new (file+head  "sctg/tickets/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n")
+          :unnarrowed t)     
+         ("D" "discovery" plain 
+          (file "~/Dropbox/etc/discoveries/problem-solving_template.org")
+          :if-new (file+head  "sctg/tickets/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n#+roam_tags: discovery\n")
+          :unnarrowed t)     
+         ("r" "reinvent" plain 
+          (file "~/Dropbox/etc/aws/reinvent/reinvent_template.org")
+          :if-new (file+head  "aws/reinvent/2020/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n#+roam_tags: reinvent re2020\n")
+          :unnarrowed t)     
+         ("k" "trek10" plain 
+          (file "~/Dropbox/etc/trek10/trek10_template.org")
+          :if-new (file+head  "trek10/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n")
+          :unnarrowed t)     
+         ("R" "recipe" plain 
+          (file "~/Dropbox/etc/recipes/recipe_template.org")
+          :if-new (file+head  "recipes/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n#+roam_tags: recipes\n")
+          :unnarrowed t)     
+         ("b" "biz - stock trading" plain 
+          (file "~/Dropbox/etc/biz/biz_template.org")
+          :if-new (file+head  "biz/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n#+roam_tags: trading\n")
+          :unnarrowed t)  
+         ("f" "finance - budgeting, forecasting, expenses" plain 
+          (file "~/Dropbox/etc/biz/money_template.org")
+          :if-new (file+head  "biz/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n#+roam_tags: finance\n")
+          :unnarrowed t)  
+         ("a" "adrs" plain 
+          (file "~/Dropbox/etc/sctg/adrs/template.org")
+          :if-new (file+head  "sctg/adrs/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n")
+          :unnarrowed t)     
          )
 )
-      :bind (:map org-roam-mode-map
-              (("C-c n l" . org-roam)
-               ("C-c n f" . org-roam-find-file)
-               ("C-c n g" . org-roam-graph))
-              :map org-mode-map
-              (("C-c n i" . org-roam-insert))
-              (("C-c n I" . org-roam-insert-immediate))))
+     :bind (("C-c n l" . org-roam-buffer-toggle)
+             ("C-c n f" . org-roam-node-find)
+             ("C-c n g" . org-roam-graph)
+             ("C-c n i" . org-roam-node-insert)
+             ("C-c n c" . org-roam-capture)
+             ;; Dailies
+             ("C-c n j" . org-roam-dailies-capture-today))
+      :config
+      (org-roam-setup)
+              )
 
 
 (use-package org-download
@@ -225,7 +227,7 @@
 (use-package org-journal
   :ensure t
   :bind
-  ("C-c n j" . org-journal-new-entry)
+  ("C-c o j" . org-journal-new-entry)
   :custom
   (org-journal-date-prefix "#+title: ")
   (org-journal-time-format "%H:%M %Z")

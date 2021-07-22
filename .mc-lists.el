@@ -7,6 +7,7 @@
         beginning-of-visual-line
         end-of-visual-line
         indent-for-tab-command
+        keyboard-escape-quit
         kill-visual-line
         mouse-drag-vertical-line
         mouse-select-window
@@ -21,9 +22,11 @@
         org-self-insert-command
         org-table-copy-down
         org-yank
+        paredit-semicolon
         yaml-electric-backspace
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        counsel-find-file
         ))
