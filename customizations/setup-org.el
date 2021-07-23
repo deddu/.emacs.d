@@ -104,9 +104,12 @@
       :ensure t
       :custom
       (org-roam-v2-ack t)
+      (org-roam-graph-link-hidden-types '( "fuzzy" "attachment" "bbdb" "docview" "doi" "elisp"
+                                         "ftp" "gnus" "help" "http" "https" "info" "irc"
+                                         "mailto" "mhe" "news" "tel" "rmail" "shell"))
       (org-roam-directory (file-truename "~/Dropbox/etc"))
       (org-roam-db-location "~/Dropbox/etc/zk/org-roam.db")
-      (org-roam-tag-sources '(prop last-directory))
+
       (org-roam-capture-templates 
        '(
          ("d" "default" plain "%?"
@@ -129,47 +132,47 @@
            "#+title: ${title}\n")
           :unnarrowed t)         
          ("w" "workplace" plain 
-          (file "~/Dropbox/etc/org/workplace_template.org")
+          (file "~/Dropbox/etc/org/workplace_template.otpl")
           :if-new (file+head  "jobs/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
           :unnarrowed t)         
          ("T" "ticket" plain 
-          (file "~/Dropbox/etc/sctg/tickets/tkt-template.org")
+          (file "~/Dropbox/etc/sctg/tickets/tkt-template.otpl")
           :if-new (file+head  "sctg/tickets/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
           :unnarrowed t)     
          ("D" "discovery" plain 
-          (file "~/Dropbox/etc/discoveries/problem-solving_template.org")
+          (file "~/Dropbox/etc/discoveries/problem-solving_template.otpl")
           :if-new (file+head  "sctg/tickets/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: discovery\n")
           :unnarrowed t)     
          ("r" "reinvent" plain 
-          (file "~/Dropbox/etc/aws/reinvent/reinvent_template.org")
+          (file "~/Dropbox/etc/aws/reinvent/reinvent_template.otpl")
           :if-new (file+head  "aws/reinvent/2020/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: reinvent re2020\n")
           :unnarrowed t)     
          ("k" "trek10" plain 
-          (file "~/Dropbox/etc/trek10/trek10_template.org")
+          (file "~/Dropbox/etc/trek10/tkt_template.otpl")
           :if-new (file+head  "trek10/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
           :unnarrowed t)     
          ("R" "recipe" plain 
-          (file "~/Dropbox/etc/recipes/recipe_template.org")
+          (file "~/Dropbox/etc/recipes/recipe_template.otpl")
           :if-new (file+head  "recipes/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: recipes\n")
           :unnarrowed t)     
          ("b" "biz - stock trading" plain 
-          (file "~/Dropbox/etc/biz/biz_template.org")
+          (file "~/Dropbox/etc/biz/biz_template.otpl")
           :if-new (file+head  "biz/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: trading\n")
           :unnarrowed t)  
          ("f" "finance - budgeting, forecasting, expenses" plain 
-          (file "~/Dropbox/etc/biz/money_template.org")
+          (file "~/Dropbox/etc/biz/money_template.otpl")
           :if-new (file+head  "biz/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: finance\n")
           :unnarrowed t)  
          ("a" "adrs" plain 
-          (file "~/Dropbox/etc/sctg/adrs/template.org")
+          (file "~/Dropbox/etc/sctg/adrs/template.otpl")
           :if-new (file+head  "sctg/adrs/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
           :unnarrowed t)     
