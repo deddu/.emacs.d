@@ -156,6 +156,11 @@
           :if-new (file+head  "trek10/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
           :unnarrowed t)     
+         ("i" "t10-invoice" plain 
+          (file "~/Dropbox/etc/trek10/invoice_template.otpl")
+          :if-new (file+head  "trek10/invoices/%<%Y%m>-${slug}.org"
+           "#+title: ${title}\n")
+          :unnarrowed t)     
          ("R" "recipe" plain 
           (file "~/Dropbox/etc/recipes/recipe_template.otpl")
           :if-new (file+head  "recipes/%<%Y%m%d>-${slug}.org"
