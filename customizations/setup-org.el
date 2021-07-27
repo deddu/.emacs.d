@@ -8,7 +8,8 @@
 (require 'org)
 
 (require 'ob-async)
-(require 'ox-confluence)
+;; (require 'ox-confluence) ;; not really working anymore
+
 
 ;; Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)
@@ -103,7 +104,6 @@
 (use-package org-roam
       :ensure t
       :custom
-      (org-roam-v2-ack t)
       (org-roam-graph-link-hidden-types '( "fuzzy" "attachment" "bbdb" "docview" "doi" "elisp"
                                          "ftp" "gnus" "help" "http" "https" "info" "irc"
                                          "mailto" "mhe" "news" "tel" "rmail" "shell"))
@@ -194,6 +194,7 @@
       (org-roam-setup)
               )
 
+(setq org-roam-v2-ack t)
 
 (use-package org-download
     :after org
