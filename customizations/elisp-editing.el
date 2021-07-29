@@ -13,3 +13,10 @@
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
+
+;; set up generic autocomplete
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-idle-delay 0.3)
+(setq company-minimum-prefix-length 2)
+(setq company-dabbrev-downcase nil)

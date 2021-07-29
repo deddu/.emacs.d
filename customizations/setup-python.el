@@ -6,9 +6,6 @@
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 (setq lsp-prefer-capf t )
 
-(add-hook 'after-init-hook 'global-company-mode)
-(setq company-idle-delay 0.3)
-(setq company-minimum-prefix-length 2)
 
 ;; (with-eval-after-load 'python
 ;;   (defun python-shell-completion-native-try ()
