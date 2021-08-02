@@ -10,3 +10,6 @@
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
+
+(use-package no-littering
+  :ensure t)
