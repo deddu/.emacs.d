@@ -108,7 +108,7 @@
                                          "ftp" "gnus" "help" "http" "https" "info" "irc"
                                          "mailto" "mhe" "news" "tel" "rmail" "shell"))
       (org-roam-directory (file-truename "~/Dropbox/etc"))
-      (org-roam-db-location "~/Dropbox/etc/zk/org-roam.db")
+      (org-roam-db-location (file-truename "~/Dropbox/etc/zk/org-roam.db"))
 
       (org-roam-capture-templates 
        '(
@@ -146,6 +146,12 @@
           :if-new (file+head  "sctg/tickets/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: discovery\n")
           :unnarrowed t)     
+
+         ("b" "presentation, talk, beamer " plain 
+          (file "~/Dropbox/etc/talks/talks-tpl.otpl")
+          :if-new (file+head  "talks/%<%Y%m%d>-${slug}.org"
+           "")
+          :unnarrowed t)     
          ("r" "reinvent" plain 
           (file "~/Dropbox/etc/aws/reinvent/reinvent_template.otpl")
           :if-new (file+head  "aws/reinvent/2020/%<%Y%m%d>-${slug}.org"
@@ -166,7 +172,7 @@
           :if-new (file+head  "recipes/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: recipes\n")
           :unnarrowed t)     
-         ("b" "biz - stock trading" plain 
+         ("B" "biz - stock trading" plain 
           (file "~/Dropbox/etc/biz/biz_template.otpl")
           :if-new (file+head  "biz/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: trading\n")
