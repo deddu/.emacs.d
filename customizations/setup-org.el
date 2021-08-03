@@ -101,6 +101,7 @@
 ;; (setq org-roam-directory "~/Dropbox/zk")
 ;; (add-hook 'after-init-hook 'org-roam-mode)
 
+
 (use-package org-roam
       :ensure t
       :custom
@@ -108,8 +109,7 @@
                                          "ftp" "gnus" "help" "http" "https" "info" "irc"
                                          "mailto" "mhe" "news" "tel" "rmail" "shell"))
       (org-roam-directory (file-truename "~/Dropbox/etc"))
-      (org-roam-db-location (file-truename "~/Dropbox/etc/zk/org-roam.db"))
-
+      (org-roam-db-location (file-truename (concat "~/Dropbox/etc/" user-login-name ".roam.db")))
       (org-roam-capture-templates 
        '(
          ("d" "default" plain "%?"
