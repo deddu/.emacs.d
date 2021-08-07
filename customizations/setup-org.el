@@ -105,7 +105,7 @@
 (use-package org-roam
       :ensure t
       :custom
-      (org-roam-graph-link-hidden-types '( "fuzzy" "attachment" "bbdb" "docview" "doi" "elisp"
+      (org-roam-graph-link-hidden-types '( "file" "fuzzy" "attachment" "bbdb" "docview" "doi" "elisp"
                                          "ftp" "gnus" "help" "http" "https" "info" "irc"
                                          "mailto" "mhe" "news" "tel" "rmail" "shell"))
       (org-roam-directory (file-truename "~/Dropbox/etc"))
