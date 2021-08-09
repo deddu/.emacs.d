@@ -67,3 +67,6 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+;; sets fullscreen combo 
+(global-set-key (kbd "M-RET") 'toggle-frame-fullscreen)
