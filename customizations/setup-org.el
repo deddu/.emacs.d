@@ -104,6 +104,7 @@
 
 (use-package org-roam
       :ensure t
+      :init (setq org-roam-v2-ack t)
       :custom
       (org-roam-graph-link-hidden-types '( "file" "fuzzy" "attachment" "bbdb" "docview" "doi" "elisp"
                                          "ftp" "gnus" "help" "http" "https" "info" "irc"
@@ -154,8 +155,8 @@
           :unnarrowed t)     
          ("r" "reinvent" plain 
           (file "~/Dropbox/etc/aws/reinvent/reinvent_template.otpl")
-          :if-new (file+head  "aws/reinvent/2020/%<%Y%m%d>-${slug}.org"
-           "#+title: ${title}\n#+roam_tags: reinvent re2020\n")
+          :if-new (file+head  "aws/reinvent/2021/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n#+roam_tags: reinvent re2021\n")
           :unnarrowed t)     
          ("k" "trek10" plain 
           (file "~/Dropbox/etc/trek10/tkt_template.otpl")
@@ -188,19 +189,31 @@
            "#+title: ${title}\n")
           :unnarrowed t)     
          )
-)
+       )
+;; how do i set a template for the daily capture?(org-roam-dailies-capture-templates (quote (("d" "default" plain (function org-roam--capture-get-point) "%?"))))
      :bind (("C-c n l" . org-roam-buffer-toggle)
              ("C-c n f" . org-roam-node-find)
              ("C-c n g" . org-roam-graph)
              ("C-c n i" . org-roam-node-insert)
              ("C-c n c" . org-roam-capture)
              ;; Dailies
-             ("C-c n j" . org-roam-dailies-capture-today))
+             ("C-c n j" . org-roam-dailies-capture-today)
+             :map org-mode-map
+             ("C-M-i" . completion-at-point)
+             :map org-roam-dailies-map
+             ("Y" . org-roam-dailies-capture-yesterday)
+             ("T" . org-roam-dailies-capture-tomorrow)
+
+)
+:bind-keymap
+  ("C-c n d" . org-roam-dailies-map)
       :config
-      (org-roam-setup)
+      (require 'org-roam-dailies)
+;;      (org-roam-setup)
+(org-roam-db-autosync-mode)
               )
 
-(setq org-roam-v2-ack t)
+
 
 (use-package org-download
     :after org
