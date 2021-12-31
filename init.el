@@ -12,9 +12,9 @@
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives
-	     '("org" . "https://orgmode.org/elpa/") t)
+             '("nongnu" . "https://elpa.nongnu.org/nongnu/") t)
 (add-to-list 'package-archives
-             '("gnu" . "http://elpa.gnu.org/packages/") t)
+             '("gnu" . "https://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
