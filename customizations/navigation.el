@@ -49,7 +49,7 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "C-c d") 'counsel-descbinds)
 (global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c t") 'counsel-load-theme)
+;(global-set-key (kbd "C-c t") 'counsel-load-theme)
 (global-set-key (kbd "C-c F") 'counsel-org-file)
 
 (require 'ivy-rich)
@@ -136,6 +136,7 @@
   ("<f8>" . neotree-toggle)
   ("<f7>" . neotree-dir))
 
+
 ;; dired on left
 (defun dre/dired-in-side-buffer ()
   "Display Dired in a side window."
@@ -148,3 +149,16 @@
                                      (window-width . 30)
                                      (slot . -1)
                                      (window-parameters . ((mode-line-format . none))))))))
+
+
+
+(global-set-key (kbd "C-c t") '(lambda ()
+			     (interactive)
+			     (if (get-buffer "*shell*")
+				 (progn 
+				   (switch-to-buffer "*shell*")
+				   (end-of-buffer))
+			       (shell))))
+
+(global-set-key (kbd "C-x j") 'bury-buffer)
+
