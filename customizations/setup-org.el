@@ -250,6 +250,22 @@
   (org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages)
   (add-to-list 'org-babel-tangle-lang-exts '("cypher" . "cypher")))
 
+;; (defun org-journal-file-header-func ()
+;;   "Custom function to add org id to journal header."
+;;   (concat
+;;     (pcase org-journal-file-type
+;;       (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
+;;       (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
+;;       (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+;;       (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
+
+(defun dre-org-journal-header-gen (time)
+"custom fun to create org id header for journal entries "
+(org-id-get-create)
+""
+)
+
+
 (use-package org-journal
   :ensure t
   :bind
@@ -257,6 +273,11 @@
   :custom
   (org-journal-date-prefix "#+title: ")
   (org-journal-time-format "%H:%M %Z")
-  (org-journal-file-format "%Y%m%d.org")
-  (org-journal-dir "~/Dropbox/etc/journal/")
-  (org-journal-date-format "%A, %d %B %Y"))
+  (org-journal-file-format "%Y-%m-%d.org")
+  (org-journal-dir "~/Dropbox/etc/daily/")
+  (org-journal-date-format "%Y-%m-%d") 
+  (org-journal-hide-entries-p nil)
+  (org-journal-carryover-items "+TODO='TODO'|'PARK'|'RECUR'")
+;  (org-journal-skip-carryover-drawers '("LOGBOOK"))
+ (org-journal-file-header 'dre-org-journal-header-gen)
+)

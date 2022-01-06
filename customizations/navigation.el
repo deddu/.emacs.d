@@ -135,3 +135,16 @@
   :bind 
   ("<f8>" . neotree-toggle)
   ("<f7>" . neotree-dir))
+
+;; dired on left
+(defun dre/dired-in-side-buffer ()
+  "Display Dired in a side window."
+  (interactive)
+  (let* ((dir (read-directory-name "Directory: "))
+         (buf (dired-noselect dir)))
+    (select-window
+     (display-buffer-in-side-window buf
+                                   '((side . left)
+                                     (window-width . 30)
+                                     (slot . -1)
+                                     (window-parameters . ((mode-line-format . none))))))))
