@@ -23,6 +23,8 @@
              ("STAGED" . "pink")
              ("PEER_REVIEW" . "yellow")
              ("WONTDO" . "purple")
+             ("RECUR" . "lightblue")
+             ("PARK" . "gray")
              ("STARTED" . (:foreground "orange" :weight bold))))
 
 
