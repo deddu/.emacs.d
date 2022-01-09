@@ -17,7 +17,7 @@
 (global-set-key "\C-cb" 'org-switchb)
 
 (setq org-todo-keyword-faces
-           '(("TODO" . org-warning) 
+           '(("TODO" . org-warning)
              ("WAITING" . "yellow")
              ("IN_PROGRESS" . (:foreground "black" :background "pink" ))
              ("STAGED" . "pink")
@@ -26,6 +26,61 @@
              ("RECUR" . "lightblue")
              ("PARK" . "gray")
              ("STARTED" . (:foreground "orange" :weight bold))))
+
+
+;;  (setq org-hide-emphasis-markers t)
+
+;; (add-hook 'org-mode-hook 'variable-pitch-mode)
+
+;; ;; see https://zzamboni.org/post/beautifying-org-mode-in-emacs/
+;; (let* ((variable-tuple
+;;           (cond ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
+;;                 ((x-list-fonts "Hack Nerd Font Mono-14") '(:font "Hack Nerd Font Mono-14"))
+;;                 ((x-list-fonts "Lucida Grande")   '(:font "Lucida Grande"))
+;;                 ((x-list-fonts "Verdana")         '(:font "Verdana"))
+;;                 ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
+;;                 (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
+;;          (base-font-color     (face-foreground 'default nil 'default))
+;;          (headline           `(:inherit default :weight bold :foreground ,base-font-color)))
+
+;;     (custom-theme-set-faces
+;;      'user
+;;      `(org-level-8 ((t (,@headline ,@variable-tuple))))
+;;      `(org-level-7 ((t (,@headline ,@variable-tuple))))
+;;      `(org-level-6 ((t (,@headline ,@variable-tuple))))
+;;      `(org-level-5 ((t (,@headline ,@variable-tuple))))
+;;      `(org-level-4 ((t (,@headline ,@variable-tuple :height 1.1))))
+;;      `(org-level-3 ((t (,@headline ,@variable-tuple :height 1.25))))
+;;      `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.5))))
+;;      `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
+;;      `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))
+
+;; (custom-theme-set-faces
+;;    'user
+;;    '(variable-pitch ((t (:family "ETBembo" :height 220))))
+;;    '(fixed-pitch ((t ( :family "Hack Nerd Font Mono-14" :height 160)))))
+
+;;  (custom-theme-set-faces
+;;    'user
+;;    '(org-block ((t (:inherit (shadow fixed-pitch) :extend t))))
+;;    '(org-code ((t (:inherit (shadow  fixed-pitch) :extend t ))))
+;; ;   '(org-document-info ((t (:foreground "dark orange"))))
+;; ;   '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
+;;    '(org-indent ((t (:inherit (org-hide fixed-pitch)))))
+;; ;;   '(org-link ((t (:foreground "dark orange" :underline t))))
+;;    '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+;; ;   '(org-property-value ((t (:inherit fixed-pitch))) t)
+;; ;   '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+;; ;   '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
+;;    '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.9))))
+   ;; '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
+
+
+;; (use-package mixed-pitch
+;;   :ensure t
+;;   :hook
+;;   ;; If you want it in all text modes:
+;;   (text-mode . mixed-pitch-mode))
 
 
 (setq org-refile-targets
@@ -113,7 +168,7 @@
                                          "mailto" "mhe" "news" "tel" "rmail" "shell"))
       (org-roam-directory (file-truename "~/Dropbox/etc"))
       (org-roam-db-location (file-truename (concat "~/Dropbox/etc/" user-login-name ".roam.db")))
-      (org-roam-capture-templates 
+      (org-roam-capture-templates
        '(
          ("d" "default" plain "%?"
           :if-new (file+head "zk/%<%Y%m%d>-${slug}.org"
@@ -123,73 +178,73 @@
           "%?"
           :if-new (file+head  "ppl/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
-          :unnarrowed t)         
-         ("t" "tech" plain 
+          :unnarrowed t)
+         ("t" "tech" plain
           "%?"
           :if-new (file+head  "tech/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
           :unnarrowed t)
-         ("c" "company" plain 
+         ("c" "company" plain
           "%?"
           :if-new (file+head  "jobs/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
-          :unnarrowed t)         
-         ("w" "workplace" plain 
+          :unnarrowed t)
+         ("w" "workplace" plain
           (file "~/Dropbox/etc/org/workplace_template.otpl")
           :if-new (file+head  "jobs/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
-          :unnarrowed t)         
-         ("T" "ticket" plain 
+          :unnarrowed t)
+         ("T" "ticket" plain
           (file "~/Dropbox/etc/sctg/tickets/tkt-template.otpl")
           :if-new (file+head  "sctg/tickets/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
-          :unnarrowed t)     
-         ("D" "discovery" plain 
+          :unnarrowed t)
+         ("D" "discovery" plain
           (file "~/Dropbox/etc/discoveries/problem-solving_template.otpl")
           :if-new (file+head  "sctg/tickets/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: discovery\n")
-          :unnarrowed t)     
+          :unnarrowed t)
 
-         ("b" "presentation, talk, beamer " plain 
+         ("b" "presentation, talk, beamer " plain
           (file "~/Dropbox/etc/talks/talks-tpl.otpl")
           :if-new (file+head  "talks/%<%Y%m%d>-${slug}.org"
            "")
-          :unnarrowed t)     
-         ("r" "reinvent" plain 
+          :unnarrowed t)
+         ("r" "reinvent" plain
           (file "~/Dropbox/etc/aws/reinvent/reinvent_template.otpl")
           :if-new (file+head  "aws/reinvent/2021/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: reinvent re2021\n")
-          :unnarrowed t)     
-         ("k" "trek10" plain 
+          :unnarrowed t)
+         ("k" "trek10" plain
           (file "~/Dropbox/etc/trek10/tkt_template.otpl")
           :if-new (file+head  "trek10/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
-          :unnarrowed t)     
-         ("i" "t10-invoice" plain 
+          :unnarrowed t)
+         ("i" "t10-invoice" plain
           (file "~/Dropbox/etc/trek10/invoice_template.otpl")
           :if-new (file+head  "trek10/invoices/%<%Y%m>-${slug}.org"
            "#+title: ${title}\n")
-          :unnarrowed t)     
-         ("R" "recipe" plain 
+          :unnarrowed t)
+         ("R" "recipe" plain
           (file "~/Dropbox/etc/recipes/recipe_template.otpl")
           :if-new (file+head  "recipes/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: recipes\n")
-          :unnarrowed t)     
-         ("B" "biz - stock trading" plain 
+          :unnarrowed t)
+         ("B" "biz - stock trading" plain
           (file "~/Dropbox/etc/biz/biz_template.otpl")
           :if-new (file+head  "biz/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: trading\n")
-          :unnarrowed t)  
-         ("f" "finance - budgeting, forecasting, expenses" plain 
+          :unnarrowed t)
+         ("f" "finance - budgeting, forecasting, expenses" plain
           (file "~/Dropbox/etc/biz/money_template.otpl")
           :if-new (file+head  "biz/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: finance\n")
-          :unnarrowed t)  
-         ("a" "adrs" plain 
+          :unnarrowed t)
+         ("a" "adrs" plain
           (file "~/Dropbox/etc/sctg/adrs/template.otpl")
           :if-new (file+head  "sctg/adrs/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
-          :unnarrowed t)     
+          :unnarrowed t)
          )
        )
 ;; how do i set a template for the daily capture?(org-roam-dailies-capture-templates (quote (("d" "default" plain (function org-roam--capture-get-point) "%?"))))
@@ -215,6 +270,17 @@
 (org-roam-db-autosync-mode)
               )
 
+;; (use-package org-roam-ui
+;;   :after org-roam
+;;   :ensure t
+;;   :demand
+
+;;   :custom
+;;   (org-roam-ui-follow         t)
+;;   (org-roam-ui-open-on-start  t)
+;;   (org-roam-ui-sync-theme     t)
+;;   (org-roam-ui-update-on-save t)
+;;   )
 
 
 (use-package org-download
@@ -231,6 +297,16 @@
     ("C-M-y" . org-download-screenshot)
     :config
     (require 'org-download))
+
+
+(use-package ob-svgbob
+  :after org
+  :ensure t
+  :demand
+
+  :config
+  (add-to-list 'org-src-lang-modes '("svgbob" . artist))
+  )
 
 
 (use-package ox-hugo
@@ -275,7 +351,7 @@
   (org-journal-time-format "%H:%M %Z")
   (org-journal-file-format "%Y-%m-%d.org")
   (org-journal-dir "~/Dropbox/etc/daily/")
-  (org-journal-date-format "%Y-%m-%d") 
+  (org-journal-date-format "%Y-%m-%d")
   (org-journal-hide-entries-p nil)
   (org-journal-carryover-items "+TODO='TODO'|'PARK'|'RECUR'")
 ;  (org-journal-skip-carryover-drawers '("LOGBOOK"))

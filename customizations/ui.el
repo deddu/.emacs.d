@@ -75,3 +75,21 @@
 ;; font
 (add-to-list 'default-frame-alist
              '(font . "Hack Nerd Font Mono-14"))
+
+
+(use-package quelpa
+:ensure t)
+
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://github.com/quelpa/quelpa-use-package.git"))
+(require 'quelpa-use-package)
+
+(use-package nano-theme
+  :ensure t
+  :after quelpa
+  :defer t
+  :quelpa (nano-theme
+           :fetcher github
+           :repo "rougier/nano-theme"))

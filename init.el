@@ -104,6 +104,7 @@
     org-ref
     ;; zettelkasten installation
     org-roam
+    ;; org-roam-ui
     ;; download snapshots
     org-download
     ;; org-ref-ivy-cite
@@ -206,12 +207,10 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
- '(ansi-color-names-vector
-   (vector "#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#000000"))
  '(coffee-tab-width 2)
- '(custom-enabled-themes '(zenburn))
+ '(custom-enabled-themes '(nano-dark))
  '(custom-safe-themes
-   '("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "0eccc893d77f889322d6299bec0f2263bffb6d3ecc79ccef76f1a2988859419e" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
+   '("81f2e389938b9117dc939845ed75ce48584dd01f870d9315d20a56d36d750423" "db5b906ccc66db25ccd23fc531a213a1afb500d717125d526d8ff67df768f2fc" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "0eccc893d77f889322d6299bec0f2263bffb6d3ecc79ccef76f1a2988859419e" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
  '(fci-rule-color "#2a2a2a")
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
@@ -223,13 +222,8 @@
  '(org-export-backends '(ascii beamer html icalendar latex md odt confluence))
  '(org-log-into-drawer t)
  '(package-selected-packages
-   '(use-package ein lsp-ui blacken py-autopep8 lsp-ivy org-ref es-mode ob-http move-text counsel swiper yasnippet-snippets docker-tramp oauth2 org-journal elfeed neotree rustic ob-cypher org-plus-contrib ox-slack ox-hugo ob-async org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+   '(nano-theme quelpa-use-package quelpa ob-svgbob use-package ein lsp-ui blacken py-autopep8 lsp-ivy org-ref es-mode ob-http move-text counsel swiper yasnippet-snippets docker-tramp oauth2 org-journal elfeed neotree rustic ob-cypher org-plus-contrib ox-slack ox-hugo ob-async org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider))
+ '(widget-image-enable nil)
+ '(x-underline-at-descent-line t))
 
 ;;(load "setup-org-latex.el")
-
