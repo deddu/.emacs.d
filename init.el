@@ -209,6 +209,7 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(coffee-tab-width 2)
  '(custom-enabled-themes '(nano-dark))
+ '(custom-enabled-themes '(tomorrow-night-eighties zeno))
  '(custom-safe-themes
    '("81f2e389938b9117dc939845ed75ce48584dd01f870d9315d20a56d36d750423" "db5b906ccc66db25ccd23fc531a213a1afb500d717125d526d8ff67df768f2fc" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "0eccc893d77f889322d6299bec0f2263bffb6d3ecc79ccef76f1a2988859419e" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
  '(fci-rule-color "#2a2a2a")

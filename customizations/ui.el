@@ -74,7 +74,15 @@
 
 ;; font
 (add-to-list 'default-frame-alist
-             '(font . "Hack Nerd Font Mono-14"))
+;;'(font . "Hack Nerd Font Mono-14")
+             '(font . "GoMono Nerd Font Mono-16")
+)
+
+(use-package which-key
+:ensure t
+:config
+    (which-key-mode)
+)
 
 
 (use-package quelpa
@@ -86,10 +94,54 @@
    :url "https://github.com/quelpa/quelpa-use-package.git"))
 (require 'quelpa-use-package)
 
-(use-package nano-theme
-  :ensure t
-  :after quelpa
-  :defer t
-  :quelpa (nano-theme
-           :fetcher github
-           :repo "rougier/nano-theme"))
+;; (use-package nano-theme
+;;   :ensure t
+;;   :after quelpa
+;;   :defer t
+;;   :quelpa (nano-theme
+;;            :fetcher github
+;;            :repo "rougier/nano-theme"))
+
+(use-package svg-lib
+  :ensure t)
+
+(use-package svg-tag-mode
+  :ensure t)
+
+(require 'svg-tag-mode)
+
+(defvar csticket-re
+"\\(CS[[:digit:]]\\{7\\}\\|INC[[:digit:]]\\{7\\}\\|PTSK[[:digit:]]\\{7\\}\\|RITM[[:digit:]]\\{7\\}\\)" )
+
+(setq svg-tag-tags
+      '(
+        ;; TODO / DONE
+        ("TODO" . ((lambda (tag) (svg-tag-make "TODO" :face 'org-todo :inverse t :margin 0))))
+        ("RECUR" . ((lambda (tag) (svg-tag-make "RECUR" :inverse t :background "#dddddd" :margin 0))))
+        ("PARK" . ((lambda (tag) (svg-tag-make "PARK" :inverse t :margin 0))))
+        ("WONTDO" . ((lambda (tag) (svg-tag-make "WONTDO" :face 'org-todo :margin 0))))
+        ("DONE" . ((lambda (tag) (svg-tag-make "DONE" :face 'org-done :margin 0))))
+
+  ;; org tags. messes with clocktable though.        
+  ;; (":\\([A-Za-z0-9]+\\)" . ((lambda (tag) (svg-tag-make tag))))
+  ;;       (":\\([A-Za-z0-9]+[ \-]\\)" . ((lambda (tag) tag)))
+        
+        ;; Task priority
+        ("\\[#[A-Z]\\]" . ( (lambda (tag)
+                              (svg-tag-make tag :face 'org-priority 
+                                            :beg 2 :end -1 :margin 0))))
+        
+        ;; (,(format "\\(%s\\)" csticket-re) .
+        ;;  ((lambda (tag)
+        ;;     (svg-tag-make tag :beg 1 :end -1 :margin 0))))
+
+        ;;tickets
+        ( "\\(CS[[:digit:]]\\{7\\}\\|INC[[:digit:]]\\{7\\}\\|PTSK[[:digit:]]\\{7\\}\\|RITM[[:digit:]]\\{7\\}\\)" .
+         ((lambda (tag)
+            (svg-tag-make tag))))
+
+
+
+))
+
+
