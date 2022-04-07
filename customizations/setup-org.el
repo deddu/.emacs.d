@@ -155,9 +155,14 @@
 (define-key mc/keymap (kbd "<return>") nil)
 
 
+(define-key global-map (kbd "C-c o") 'org-capture)
+(setq org-capture-templates
+      `(("i" "Inbox" entry  (file "inbox.org")
+        ,(concat "* TODO %?\n"
+                 "ENTERED: %U")))
+)
 
-;; (setq org-roam-directory "~/Dropbox/zk")
-;; (add-hook 'after-init-hook 'org-roam-mode)
+
 
 
 (use-package org-roam
@@ -343,18 +348,18 @@
 )
 
 
-(use-package org-journal
-  :ensure t
-  :bind
-  ("C-c o j" . org-journal-new-entry)
-  :custom
-  (org-journal-date-prefix "#+title: ")
-  (org-journal-time-format "%H:%M %Z")
-  (org-journal-file-format "%Y-%m-%d.org")
-  (org-journal-dir "~/Dropbox/etc/daily/")
-  (org-journal-date-format "%Y-%m-%d")
-  (org-journal-hide-entries-p nil)
-  (org-journal-carryover-items "+TODO='TODO'|'PARK'|'RECUR'")
-;  (org-journal-skip-carryover-drawers '("LOGBOOK"))
- (org-journal-file-header 'dre-org-journal-header-gen)
-)
+;; (use-package org-journal
+;;   :ensure t
+;;   :bind
+;;   ("C-c o j" . org-journal-new-entry)
+;;   :custom
+;;   (org-journal-date-prefix "#+title: ")
+;;   (org-journal-time-format "%H:%M %Z")
+;;   (org-journal-file-format "%Y-%m-%d.org")
+;;   (org-journal-dir "~/Dropbox/etc/daily/")
+;;   (org-journal-date-format "%Y-%m-%d")
+;;   (org-journal-hide-entries-p nil)
+;;   (org-journal-carryover-items "+TODO='TODO'|'PARK'|'RECUR'")
+;; ;  (org-journal-skip-carryover-drawers '("LOGBOOK"))
+;;  (org-journal-file-header 'dre-org-journal-header-gen)
+;; )

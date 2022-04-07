@@ -186,6 +186,9 @@
 ;; For editing lisps
 (load "elisp-editing.el")
 
+;; My own functions
+(load "dre.el")
+
 ;; Language-specific
 ;;(load "setup-clojure.el")
 ;;(load "setup-clojurescript.el")
@@ -194,6 +197,7 @@
 (load "setup-python.el")
 (load "setup-databases.el")
 (load "setup-docker.el")
+(load "setup-clisp.el")
 ;;(load "rust.el")
 ;;(load "feeds.el")
 ;; OrgMode
@@ -208,23 +212,23 @@
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
  '(coffee-tab-width 2)
- '(custom-enabled-themes '(nano-dark))
  '(custom-enabled-themes '(tomorrow-night-eighties zeno))
  '(custom-safe-themes
-   '("81f2e389938b9117dc939845ed75ce48584dd01f870d9315d20a56d36d750423" "db5b906ccc66db25ccd23fc531a213a1afb500d717125d526d8ff67df768f2fc" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "0eccc893d77f889322d6299bec0f2263bffb6d3ecc79ccef76f1a2988859419e" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
+   '("cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" "7b1ea77093c438aa5887b2649ca079c896cc8780afef946d3b6c53931081a726" "81f2e389938b9117dc939845ed75ce48584dd01f870d9315d20a56d36d750423" "db5b906ccc66db25ccd23fc531a213a1afb500d717125d526d8ff67df768f2fc" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "0eccc893d77f889322d6299bec0f2263bffb6d3ecc79ccef76f1a2988859419e" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
  '(fci-rule-color "#2a2a2a")
- '(haskell-process-auto-import-loaded-modules t)
- '(haskell-process-log t)
- '(haskell-process-suggest-remove-import-lines t)
- '(haskell-process-type 'cabal-repl)
- '(haskell-tags-on-save t)
  '(org-agenda-files
-   '("~/Dropbox/etc/sctg/florence.org" "~/Dropbox/etc/refile-beorg.org" "~/Dropbox/etc/sctg/todo.org" "~/Dropbox/etc/todo.org"))
+   '("~/Dropbox/etc/refile-beorg.org" "/Users/acadeddu/Dropbox/etc/sctg/todo.org" "/Users/acadeddu/Dropbox/etc/todo.org" "/Users/acadeddu/Dropbox/etc/jobs/20210714064517-streamguys.org" "/Users/acadeddu/Dropbox/etc/sctg/florence.org" "/Users/acadeddu/Dropbox/etc/recurring.org"))
  '(org-export-backends '(ascii beamer html icalendar latex md odt confluence))
  '(org-log-into-drawer t)
  '(package-selected-packages
-   '(nano-theme quelpa-use-package quelpa ob-svgbob use-package ein lsp-ui blacken py-autopep8 lsp-ivy org-ref es-mode ob-http move-text counsel swiper yasnippet-snippets docker-tramp oauth2 org-journal elfeed neotree rustic ob-cypher org-plus-contrib ox-slack ox-hugo ob-async org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider))
+   '(which-key svg-tag-mode svg-lib nano-theme quelpa-use-package quelpa ob-svgbob use-package ein lsp-ui blacken py-autopep8 lsp-ivy org-ref es-mode ob-http move-text counsel swiper yasnippet-snippets docker-tramp oauth2 org-journal elfeed neotree rustic ob-cypher org-plus-contrib ox-slack ox-hugo ob-async org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider))
  '(widget-image-enable nil)
  '(x-underline-at-descent-line t))
 
-;;(load "setup-org-latex.el")
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
