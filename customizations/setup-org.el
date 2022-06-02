@@ -205,12 +205,16 @@
           :if-new (file+head  "sctg/tickets/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n")
           :unnarrowed t)
+         ("F" "florence ticket" plain
+          (file "~/Dropbox/etc/sctg/tickets/florence/flo-tkt-template.otpl")
+          :if-new (file+head  "sctg/tickets/florence/%<%Y%m%d>-${slug}.org"
+           "#+title: ${title}\n")
+          :unnarrowed t)
          ("D" "discovery" plain
           (file "~/Dropbox/etc/discoveries/problem-solving_template.otpl")
           :if-new (file+head  "sctg/tickets/%<%Y%m%d>-${slug}.org"
            "#+title: ${title}\n#+roam_tags: discovery\n")
           :unnarrowed t)
-
          ("b" "presentation, talk, beamer " plain
           (file "~/Dropbox/etc/talks/talks-tpl.otpl")
           :if-new (file+head  "talks/%<%Y%m%d>-${slug}.org"
@@ -256,7 +260,7 @@
 ;; how do i set a template for the daily capture?(org-roam-dailies-capture-templates (quote (("d" "default" plain (function org-roam--capture-get-point) "%?"))))
      :bind (("C-c n l" . org-roam-buffer-toggle)
              ("C-c n f" . org-roam-node-find)
-             ("C-c n g" . org-roam-graph)
+             ;;("C-c n g" . org-roam-graph) ;; crashes really bad, too many links i believe
              ("C-c n i" . org-roam-node-insert)
              ("C-c n c" . org-roam-capture)
              ;; Dailies
@@ -289,6 +293,7 @@
 ;;   )
 
 
+;; this is the magic sauce to downloading screenshots.
 (use-package org-download
     :after org
     :defer nil
@@ -304,7 +309,7 @@
     :config
     (require 'org-download))
 
-
+;; saw it from matt
 (use-package ob-svgbob
   :after org
   :ensure t
@@ -314,23 +319,28 @@
   (add-to-list 'org-src-lang-modes '("svgbob" . artist))
   )
 
-
+;; this can somehow build a blog from a file or a path.
+;; i think i've a capture template for it
 (use-package ox-hugo
   :ensure t            ;Auto-install the package from Melpa (optional)
   :after ox)
 
 
-(use-package ox-slack
-  :ensure t            ;Auto-install the package from Melpa (optional)
-  :after ox)
-
-
+;;neo4j cypher support
 (use-package ob-cypher
   :ensure t
   :config
   (add-to-list 'org-babel-load-languages '(cypher . t))
   (org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages)
   (add-to-list 'org-babel-tangle-lang-exts '("cypher" . "cypher")))
+
+
+
+;; org-ql
+(use-package org-ql
+  :quelpa (org-ql :fetcher github :repo "alphapapa/org-ql"
+            :files (:defaults (:exclude "helm-org-ql.el"))))
+
 
 ;; (defun org-journal-file-header-func ()
 ;;   "Custom function to add org id to journal header."

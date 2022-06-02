@@ -12,3 +12,16 @@ elpa
 bookmarks
 .org-id-locations
 org-clock-save.el
+.cache
+.lsp-session-v1
+ac-comphist.dat
+etc
+image-dired
+network-security.data
+quelpa
+request
+smex-items
+tramp
+transient
+url
+var

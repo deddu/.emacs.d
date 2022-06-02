@@ -197,7 +197,7 @@
 (load "setup-python.el")
 (load "setup-databases.el")
 (load "setup-docker.el")
-(load "setup-clisp.el")
+;;(load "setup-clisp.el")
 ;;(load "rust.el")
 ;;(load "feeds.el")
 ;; OrgMode
@@ -217,11 +217,12 @@
    '("cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" "7b1ea77093c438aa5887b2649ca079c896cc8780afef946d3b6c53931081a726" "81f2e389938b9117dc939845ed75ce48584dd01f870d9315d20a56d36d750423" "db5b906ccc66db25ccd23fc531a213a1afb500d717125d526d8ff67df768f2fc" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "0eccc893d77f889322d6299bec0f2263bffb6d3ecc79ccef76f1a2988859419e" "ef04dd1e33f7cbd5aa3187981b18652b8d5ac9e680997b45dc5d00443e6a46e3" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" default))
  '(fci-rule-color "#2a2a2a")
  '(org-agenda-files
-   '("~/Dropbox/etc/refile-beorg.org" "/Users/acadeddu/Dropbox/etc/sctg/todo.org" "/Users/acadeddu/Dropbox/etc/todo.org" "/Users/acadeddu/Dropbox/etc/jobs/20210714064517-streamguys.org" "/Users/acadeddu/Dropbox/etc/sctg/florence.org" "/Users/acadeddu/Dropbox/etc/recurring.org"))
+   '("~/Dropbox/etc/sctg/tickets/20210701110520-purchasing_platform.org" "/Users/acadeddu/Dropbox/etc/zk/20220514-moving.org" "/Users/acadeddu/Dropbox/etc/zk/20200903162420-tinkering_forward.org" "/Users/acadeddu/Dropbox/etc/tech/20200905065702-emacsturbation.org" "/Users/acadeddu/Dropbox/etc/sctg/tickets/20210611150237-fortis_erp.org" "/Users/acadeddu/Dropbox/etc/turing/notes/metra-todo.org" "/Users/acadeddu/Dropbox/etc/jobs/20210714064517-streamguys.org" "/Users/acadeddu/Dropbox/etc/sctg/deft_todo.org" "/Users/acadeddu/Dropbox/etc/refile-beorg.org" "/Users/acadeddu/Dropbox/etc/todo.org" "/Users/acadeddu/Dropbox/etc/sctg/florence.org" "/Users/acadeddu/Dropbox/etc/recurring.org"))
  '(org-export-backends '(ascii beamer html icalendar latex md odt confluence))
  '(org-log-into-drawer t)
  '(package-selected-packages
-   '(which-key svg-tag-mode svg-lib nano-theme quelpa-use-package quelpa ob-svgbob use-package ein lsp-ui blacken py-autopep8 lsp-ivy org-ref es-mode ob-http move-text counsel swiper yasnippet-snippets docker-tramp oauth2 org-journal elfeed neotree rustic ob-cypher org-plus-contrib ox-slack ox-hugo ob-async org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider))
+   '(org-ql ov org-super-agenda ts which-key svg-tag-mode svg-lib nano-theme quelpa-use-package quelpa ob-svgbob use-package ein lsp-ui blacken py-autopep8 lsp-ivy org-ref es-mode ob-http move-text counsel swiper yasnippet-snippets docker-tramp oauth2 org-journal elfeed neotree rustic ob-cypher org-plus-contrib ox-hugo ob-async org-download yaml-mode ob-coffee zenburn-theme org-roam multiple-cursors plantuml-mode company-ctags lsp-mssql flycheck lsp-mode elpy all-the-icons-ivy-rich ivy-rich ivy auctex zeno-theme org-jira hindent haskell-mode base16-theme solarized-theme yasnippet tagedit smex rainbow-delimiters projectile paredit ox-jira ox-gfm org-agenda-property magit let-alist ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojurescript-mode clojure-mode-extra-font-locking cider))
+ '(warning-suppress-types '((comp)))
  '(widget-image-enable nil)
  '(x-underline-at-descent-line t))
 
